@@ -76,9 +76,7 @@ def display_image(filename):
 	return redirect(url_for('static', filename='uploads/' + filename), code=301)
 
 
-if os.path.isfile(image_path):
- os.remove(image_path)
- print('hi bro')
+
 
 if __name__ == "__main__":
     app.run(debug=True)
