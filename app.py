@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from flask import Flask, flash, request, redirect, url_for, render_template
+from flask import  session
 from werkzeug.utils import secure_filename
 import os
 from os.path import join, dirname, realpath,abspath
@@ -14,6 +15,7 @@ from  tensorflow.python.keras.utils import np_utils
 
 
 app = Flask(__name__)
+
 #model = pickle.load(open('', 'rb'))
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -36,7 +38,7 @@ def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 @app.route('/',methods=['GET'])
 def Home():
-    return render_template('upload.html')
+    return render_template('upload_1.html')
 @app.route("/predict", methods=['POST'])
 def predict(): 
  file =  request.files['file']	
@@ -56,7 +58,7 @@ def predict():
  score = tf.nn.softmax(predictions[0])
  s=class_names[np.argmax(score)]
  
- return render_template('upload.html',prediction_text="it is a {}".format(s),filename=filename,class_name=s.lower())
+ return render_template('upload_1.html',prediction_text="It is a {}".format(s),filename=filename,class_name=s.lower())
 @app.route('/nutrien/<class_name>')
 def nutrient(class_name):
         #print('display_image filename: ' + filename)
@@ -79,6 +81,8 @@ def display_image(filename):
 
 
 if __name__ == "__main__":
+    app.config['SESSION_TYPE'] = 'memcached'
+    app.config['SECRET_KEY'] = 'super secret key'
     app.run(debug=True)
 
 

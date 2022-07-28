@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Nutrient recogniser</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+  <h2>Upload an image of fruit or vegetable  </h2>
+  <form action="{{ url_for('predict')}}" method="post" enctype="multipart/form-data">	
+
+    <p>
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+      {% endwith %}
+    </p>
+    {% if filename %}
+    <div class="row">
+  
+        <div class="column">
+        <img src="{{ url_for('display_image', filename=filename) }}" style="width:100%">
+        </div>
+        <br><br><h3>{{ prediction_text }}<h3></h3>
+        <div class="column">
+        <img src="{{ url_for('nutrient', class_name=class_name) }}" alt="Forest" style="width:100%">
+        </div>
+      
+    </div>
+    {% endif %}
+  <form method="post" action="/" enctype="multipart/form-data">
+  <div class="drop-zone">
+    <span class="drop-zone__prompt">Drop file here or click to upload</span>
+    <input type="file" name="file" class="drop-zone__input">
+  </div>
+   
+  <script src="/static/scripts/main.js"></script>
+  <input type="submit" value="Submit" style ="background-color:green"/>
+</form>
+  </form>
+</body>
