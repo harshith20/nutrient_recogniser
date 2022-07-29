@@ -39,6 +39,11 @@ def allowed_file(filename):
 @app.route('/',methods=['GET'])
 def Home():
     return render_template('upload_1.html')
+@app.route("/help", methods=['GET'])
+def help():
+    help_info="please upload a single pic of either vegetable or fruit with a white background and without uneven lighting"
+    return render_template('upload_1.html',help_info=help_info)
+        
 @app.route("/predict", methods=['POST'])
 def predict(): 
  file =  request.files['file']	

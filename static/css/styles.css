@@ -2,10 +2,15 @@ body{
   font-family: 'Brush Script MT', cursive;
   width: 1000px;
   height: 1000px;
-  background-image: url("https://wallpaper.dog/large/10987285.jpg");
+  background-image: url("https://w0.peakpx.com/wallpaper/929/367/HD-wallpaper-fruits-fruits-vegetables-fruit-vegetable.jpg");
   background-size: cover;
  }
- 
+ h2{
+  color: hwb(87 12% 31%);
+  }
+ h3{
+    color: hwb(87 12% 31%);
+    }
 
 .drop-zone {
   max-width: 200px;
@@ -20,7 +25,7 @@ body{
   font-size: 20px;
   cursor: pointer;
   color: #0b0606;
-  border: 4px dashed rgb(12, 83, 182);
+  border: 4px dashed #0cb615;
   border-radius: 10px;
 }
 
@@ -56,7 +61,7 @@ body{
 }
 .column {
   float: left;
-  width: 49%;
+  width: 39%;
   padding: 5px;
 }
 
@@ -66,4 +71,27 @@ body{
   clear: both;
   display: table;
   
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
 }
