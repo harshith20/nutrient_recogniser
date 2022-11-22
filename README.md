@@ -5,7 +5,7 @@ Identify the name and nutrient facts ,by uploading pic of a vegetable or fruit
 
 1. [Objective](#Objective)
 2. [Ml_algo](#Ml_algo)
-3. [Web scrapping](#Web scrapping)
+3. [Web_scrapping](#Web_scrapping)
 4. [Backend](#Backend)
 
 
