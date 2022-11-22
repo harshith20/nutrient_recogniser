@@ -35,7 +35,7 @@ While using neural networks  it may learn to overfit and not work for test data 
 
 I got an accuracy of over 90% for the  validation data 
 
- ## Web scrapping
+ ## Web_scrapping
 Now , i wanted to show nutrition value of the fruit or vegetable according to the label predicted by the model.
 I’ve collected pics of all the nutritional values of  labeled fruits and vegetables , saved them in static folder
 
